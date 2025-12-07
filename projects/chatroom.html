@@ -31,8 +31,15 @@
     <script type="module">
         import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js';
         import { getDatabase, ref, push, onChildAdded, onValue, set, onDisconnect, serverTimestamp } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js';
-        import firebaseConfig from '../config.js';
-
+        const firebaseConfig = {
+            apiKey: "AIzaSyAx3b277kWrvZv_-luFRdRQ8RuPxM5unu0",
+            authDomain: "chat-room-c01e0.firebaseapp.com",
+            databaseURL: "https://chat-room-c01e0-default-rtdb.europe-west1.firebasedatabase.app",
+            projectId: "chat-room-c01e0",
+            storageBucket: "chat-room-c01e0.firebasestorage.app",
+            messagingSenderId: "424137694744",
+            appId: "1:424137694744:web:47833be9b9ef2af776ad6d"
+        };
         const app = initializeApp(firebaseConfig);
         const db = getDatabase(app);
 
