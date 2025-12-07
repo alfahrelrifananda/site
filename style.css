@@ -1,4 +1,5 @@
 * {
     font-family: monospace, sans-serif;
-    background-color: #efebe0;
+    max-width: 100vw;
+    overflow-x: hidden;
 }
