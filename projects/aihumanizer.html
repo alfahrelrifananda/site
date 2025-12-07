@@ -51,8 +51,7 @@
             
             document.getElementById('loading').style.display = 'block';
             document.getElementById('outputText').value = '';
-		
-            const prompt = `Rewrite this text to sound like it was written by a human expert, not AI. Keep it concise and professional.
+		const prompt = `Rewrite this text to sound like it was written by a human expert, not AI. Keep it concise and professional.
 
 CRITICAL RULES:
 - Use the SAME LANGUAGE as input
@@ -60,16 +59,17 @@ CRITICAL RULES:
 - NO markdown formatting (no *, bold, italics, numbered lists in prose)
 - NO casual language - keep it professional and formal
 - Sound like an expert writing naturally, not a textbook
+- Add 1-2 subtle natural imperfections (minor typos or grammar quirks) - but keep it readable
 
 FOR INDONESIAN - USE FORMAL WORDS:
 Replace casual words with formal equivalents:
-- "kalau" = "jika" or "apabila"
-- "lewat" = "melalui"
-- "pakai/memakai" = "menggunakan"
-- "biar" = "agar" or "supaya"
-- "gimana" = "bagaimana"
-- "nggak/tidak" = stay as "tidak" (formal)
-- "seperti" = keep as "seperti" (already formal)
+- "kalau" → "jika" or "apabila"
+- "lewat" → "melalui"
+- "pakai/memakai" → "menggunakan"
+- "biar" → "agar" or "supaya"
+- "gimana" → "bagaimana"
+- "nggak/tidak" → stay as "tidak" (formal)
+- "seperti" → keep as "seperti" (already formal)
 
 REMOVE THESE AI PATTERNS:
 - Starting sentences with "Ketika", "Saat", "Setelah" repeatedly
@@ -85,18 +85,26 @@ WRITE LIKE A HUMAN EXPERT:
 - Don't over-explain every detail
 - Sound confident and knowledgeable, not cautious
 - Break some "perfect" grammar patterns naturally
+- Add 1-2 very subtle typos or minor grammar quirks (like missing comma, slight word repetition, or minor spelling variation) - make it look natural, not obvious
+
+NATURAL IMPERFECTIONS (use sparingly, 1-2 max):
+- Missing a comma in a complex sentence
+- Slight word order variation
+- Minor inconsistency in formatting
+- A small, natural typo (like "yg" instead of "yang" once, or double space)
 
 FOR ENGLISH:
 - Replace "when", "while", "after" at sentence starts if repetitive
 - Avoid "is responsible for", "functions as", "includes"
 - Remove hedging: "generally", "typically", "usually"
 - Sound direct and clear
+- Add minor natural imperfections (missing comma, slight repetition)
 
 Text to rewrite:
 
 ${inputText}
 
-Output the rewritten text only. Keep it professional, natural, and concise. Plain text.`;
+Output the rewritten text only. Keep it professional, natural, and concise with 1-2 subtle imperfections. Plain text.`;
 
 
             try {
