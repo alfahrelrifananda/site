@@ -51,42 +51,53 @@
             
             document.getElementById('loading').style.display = 'block';
             document.getElementById('outputText').value = '';
-	    const prompt = `Rewrite this text to sound natural and human-written. Keep it SHORT and SIMPLE but PROFESSIONAL.
+		
+            const prompt = `Rewrite this text to sound like it was written by a human expert, not AI. Keep it concise and professional.
 
 CRITICAL RULES:
 - Use the SAME LANGUAGE as input
-- Keep the SAME LENGTH or SHORTER than the original
-- NO markdown formatting (no *, bold, italics)
-- Don't add extra explanations or examples beyond what's in the original
-- Don't expand on ideas - keep it concise
-- Maintain PROFESSIONAL language - not too casual, not too formal
+- Keep SIMILAR LENGTH or SHORTER than the original
+- NO markdown formatting (no *, bold, italics, numbered lists in prose)
+- NO casual language - keep it professional and formal
+- Sound like an expert writing naturally, not a textbook
 
-STYLE FOR INDONESIAN:
-- Use natural professional phrases: "kalau dilihat dari", "sebagai contoh", "selain itu", "yang perlu diperhatikan"
-- AVOID casual slang: NO "kayak", "ngumpulin", "nggak", "biar", "mantau", "gimana", "pakai" → use "seperti", "mengumpulkan", "tidak", "agar", "memantau", "bagaimana", "menggunakan"
-- Keep it readable but professional
-- Sound like a knowledgeable person explaining, not chatting
+FOR INDONESIAN - USE FORMAL WORDS:
+Replace casual words with formal equivalents:
+- "kalau" = "jika" or "apabila"
+- "lewat" = "melalui"
+- "pakai/memakai" = "menggunakan"
+- "biar" = "agar" or "supaya"
+- "gimana" = "bagaimana"
+- "nggak/tidak" = stay as "tidak" (formal)
+- "seperti" = keep as "seperti" (already formal)
 
-STYLE FOR ENGLISH:
-- Use natural professional phrases: "looking at this", "for example", "also", "it's important to note"
-- Avoid overly casual language
-- Keep it clear and professional
+REMOVE THESE AI PATTERNS:
+- Starting sentences with "Ketika", "Saat", "Setelah" repeatedly
+- Using "bertanggung jawab", "berfungsi sebagai", "mencakup" robotically
+- Phrases like "secara keseluruhan", "pada dasarnya", "dengan demikian"
+- Perfect parallel structure in lists
+- Overly explanatory parentheses
 
-REMOVE ROBOTIC AI PHRASES:
-- "dapat diterapkan", "perlu dihindari", "dengan demikian", "oleh karena itu"
-- "it should be noted that", "it is important to", "furthermore", "moreover"
+WRITE LIKE A HUMAN EXPERT:
+- Vary sentence starters naturally
+- Mix sentence lengths (short and long)
+- Use active voice more often
+- Don't over-explain every detail
+- Sound confident and knowledgeable, not cautious
+- Break some "perfect" grammar patterns naturally
 
-IMPORTANT - DO NOT:
-- Make it longer than the original
-- Use casual chat language (kayak, nggak, biar, etc.)
-- Over-explain simple concepts
-- Add extra details or elaborations
+FOR ENGLISH:
+- Replace "when", "while", "after" at sentence starts if repetitive
+- Avoid "is responsible for", "functions as", "includes"
+- Remove hedging: "generally", "typically", "usually"
+- Sound direct and clear
 
 Text to rewrite:
 
 ${inputText}
 
-Output ONLY the rewritten text. Keep it brief, professional, and natural. Plain text only.`;
+Output the rewritten text only. Keep it professional, natural, and concise. Plain text.`;
+
 
             try {
                 const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${GEMINI_API_KEY}`, {
